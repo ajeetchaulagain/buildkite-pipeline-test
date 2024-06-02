@@ -15,7 +15,7 @@ steps:
   - command: "echo ${ENV_VARIABLE}"
 
     
-  - label: "Print env variables - ${ENV_VARIABLE}"
+  - label: "Print env variables - ${TEST_ENV_VARIABLE}"
     command: "npm install"
     env:
       ENV_VARIABLE: 'Hello'
