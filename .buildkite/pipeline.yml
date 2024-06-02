@@ -3,7 +3,9 @@ steps:
     command: "npm install"
     key: install
 
-  - label: ":test_tube: Build"
-    command: "npm run build $$Test"
+  - label: ":test_tube: Build $$Server"
+    command: "npm run build $$Server"
+    env:
+      SERVER: 'test'
     key: build
     depends_on: install
