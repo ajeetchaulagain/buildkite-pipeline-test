@@ -1,3 +1,5 @@
+env:
+  TEST_ENV_VARIABLE: 'Hello World'
 steps:
   - label: ":hammer: Install"
     command: "npm install"
@@ -11,7 +13,7 @@ steps:
         key: "release-name"
 
     
-  - label: 'Print env variables - ${ENV_VARIABLE}'
-    command: "echo ${ENV_VARIABLE}"
+  - label: "Print env variables - ${ENV_VARIABLE}"
+    command: "echo ${TEST_ENV_VARIABLE}"
     env:
       ENV_VARIABLE: 'Hello'
