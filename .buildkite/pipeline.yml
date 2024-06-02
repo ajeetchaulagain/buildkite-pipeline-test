@@ -12,9 +12,3 @@ steps:
     
   - label: 'echo'
     command: "echo 'Hello'"
-  - label: ":test_tube: Build ${SERVER}"
-    command: "npm run build $$SERVER"
-    env:
-      SERVER: 'test'
-    key: build
-    depends_on: install
