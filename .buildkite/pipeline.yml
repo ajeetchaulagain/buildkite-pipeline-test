@@ -3,7 +3,12 @@ steps:
     command: "npm install"
     key: install
 
-  - block: 'Are we ready'
+  - block: "Release"
+    prompt: "Fill out the details for release"
+    fields:
+      - text: "Release Name"
+        key: "release-name"
+
     
   - label: 'echo'
     command: "echo 'Hello'"
