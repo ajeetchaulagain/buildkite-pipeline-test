@@ -11,7 +11,7 @@ steps:
         key: "release-name"
 
     
-  - label: 'echo'
+  - label: 'Print env variables - ${ENV_VARIABLE}'
     command: "echo ${ENV_VARIABLE}"
     env:
       ENV_VARIABLE: 'Hello'
