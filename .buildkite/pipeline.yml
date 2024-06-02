@@ -1,14 +1,9 @@
 steps:
-  - label: ":hammer: Build"
-    command: "scripts/build.sh"
+  - label: ":hammer: Install"
+    command: "npm install"
+    key: install
+
+  - label: ":test_tube: Build"
+    command: "npm run build"
     key: build
-
-  - label: ":test_tube: Test"
-    command: "scripts/test.sh"
-    key: test
-    depends_on: build
-
-  - label: ":rocket: Deploy."
-    command: "scripts/deploy.sh"
-    key: deploy
-    depends_on: test
+    depends_on: install
