@@ -3,6 +3,10 @@ steps:
     command: "npm install"
     key: install
 
+  - block: 'Are we ready'
+    
+  - label: 'echo'
+    command: "echo 'Hello'"
   - label: ":test_tube: Build ${SERVER}"
     command: "npm run build $$SERVER"
     env:
