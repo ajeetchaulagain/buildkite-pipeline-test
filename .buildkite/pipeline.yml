@@ -8,7 +8,7 @@ steps:
     key: test
     depends_on: build
 
-  - label: ":rocket: Deploy"
+  - label: ":rocket: Deploy."
     command: "scripts/deploy.sh"
     key: deploy
     depends_on: test
