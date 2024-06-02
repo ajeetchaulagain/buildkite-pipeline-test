@@ -16,6 +16,6 @@ steps:
 
     
   - label: Print env variables - ${TEST_ENV_VARIABLE}"
-    command: './scripts/run-test.sh "${TEST_GROUP}"'
+    command: ./scripts/run-test.sh "${TEST_GROUP}"
     env:
       ENV_VARIABLE: 'Hello'
