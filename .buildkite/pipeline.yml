@@ -4,6 +4,6 @@ steps:
     key: install
 
   - label: ":test_tube: Build"
-    command: "npm run build"
+    command: "npm run build $$Test"
     key: build
     depends_on: install
