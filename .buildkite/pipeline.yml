@@ -12,4 +12,6 @@ steps:
 
     
   - label: 'echo'
-    command: "echo 'Hello'"
+    command: "echo ${ENV_VARIABLE}"
+    env:
+      ENV_VARIABLE: 'Hello'
