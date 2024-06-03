@@ -1,21 +1,3 @@
-env:
-  TEST_ENV_VARIABLE: 'Hello World'
 steps:
-  - label: ":hammer: Install"
-    command: "npm install"
-    key: install
-
-  # - block: "Release"
-  #   label: 'Run playwright tests'
-  #   prompt: "Fill out the details for release"
-  #   fields:
-  #     - text: "Release Name"
-  #       key: "release-name"
-
-  # - command: "echo ${ENV_VARIABLE}"
-
-    
-  - label: Print env variables - ${TEST_ENV_VARIABLE}"
-    command: "run-test.sh"
-    env:
-      ENV_VARIABLE: 'Hello'
+  - label: ":gear: Generate Dynamic Steps"
+    command: "pwsh ./generate-steps.ps1"
