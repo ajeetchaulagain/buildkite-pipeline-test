@@ -1,3 +1,21 @@
+env:
+  STEPS: "step1 step2 step3"
+
 steps:
-  - label: ":gear: Generate Dynamic Steps"
-    command: "pwsh ./generate-steps.ps1"
+  - label: ":pipeline: Generate and Upload Dynamic Steps"
+    command: |
+      #!/bin/bash
+
+      # Convert space-separated STEPS variable into an array
+      IFS=' ' read -r -a steps <<< "$STEPS"
+
+      # Start the pipeline configuration
+      echo "steps:"
+
+      # Loop through the array and create a step for each item
+      for step in "${steps[@]}"; do
+        cat <<EOF
+      - label: "$step"
+      command: "echo Running $step"
+      EOF
+      done | buildkite-agent pipeline upload
