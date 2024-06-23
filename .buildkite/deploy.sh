@@ -14,4 +14,4 @@ echo "Deploying to $env..."
 
 # Add your deployment logic here
 
-echo "Deployment to $env completed."
+echo "Deployment to $env completed !"
