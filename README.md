@@ -35,7 +35,6 @@ OR
 git clone https://github.com/ajeetchaulagain/nextjs-blog-starter-styled-components.git my-blog
 ```
 
-Install `node_modules` and run dev server:
 
 ```bash
 cd my-blog

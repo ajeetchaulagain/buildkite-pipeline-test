@@ -1,14 +1,21 @@
+env:
+  STEPS: "step1 step2 step3"
+
 steps:
-  - label: ":hammer: Build"
-    command: "scripts/build.sh"
-    key: build
+  - label: ":pipeline: Generate and Upload Dynamic Steps"
+    command: |
+      #!/bin/bash
 
-  - label: ":test_tube: Test"
-    command: "scripts/test.sh"
-    key: test
-    depends_on: build
+      # Convert space-separated STEPS variable into an array
+      IFS=' ' read -r -a steps <<< "$STEPS"
 
-  - label: ":rocket: Deploy"
-    command: "scripts/deploy.sh"
-    key: deploy
-    depends_on: test
+      # Start the pipeline configuration
+      echo "steps:"
+
+      # Loop through the array and create a step for each item
+      for step in "${steps[@]}"; do
+        cat <<EOF
+      - label: "$step"
+      command: "echo Running $step"
+      EOF
+      done | buildkite-agent pipeline upload
